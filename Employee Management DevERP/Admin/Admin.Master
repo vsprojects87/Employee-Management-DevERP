@@ -1,0 +1,78 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="Employee_Management_DevERP.Admin.Admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Employee Admin</title>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+    <style>
+        .navigate {
+            border-right: 1px solid gray;
+            background-color: darkslategray;
+            background-clip:
+        }
+    </style>
+
+    <form id="form1" runat="server">
+        <div class="container-fluid">
+            <div class="row flex-nowrap">
+                <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark position-fixed" style="height: 100vh;">
+                    <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+
+                        <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                            <span class="fs-5 d-none d-sm-inline">Admin</span>
+                        </a>
+                        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+
+                            <li>
+                                <a href="../Admin/Dashboard.aspx" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                                    <i class="fs-4 bi-speedometer2"></i><span class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
+                            </li>
+                            <li>
+                                <a href="../Admin/NewProducts.aspx" class="nav-link px-0"><i class="bi bi-file-plus fs-4"></i><span class="d-none d-sm-inline">New Employee</span></a>
+                            </li>
+                            <li>
+                                <a href="../Admin/ProductList.aspx" class="nav-link px-0"><i class="bi bi-bag-heart fs-4"></i><span class="d-none d-sm-inline">Employee List</span></a>
+                            </li>
+                            <li>
+                                <a href="../Admin/Orders.aspx" class="nav-link px-0 align-middle">
+                                    <i class="fs-4 bi-table"></i><span class="ms-1 d-none d-sm-inline">Departments</span></a>
+                            </li>
+                            <li>
+                                <a href="../Admin/UserList.aspx" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                                    <i class="fs-4 bi-people"></i><span class="ms-1 d-none d-sm-inline">Salary Form</span></a>
+                            </li>
+                            
+                        </ul>
+                        <hr>
+                        <div class="dropdown pb-4">
+                            <a href="#" class="d-flex align-items-center text-white text-decoration-none">
+                                <asp:LinkButton ID="LinkButton1" Tesxt="<i class='bi bi-box-arrow-right fs-2'></i>" runat="server"><span class="d-none d-sm-inline mx-1">LogOut</span></asp:LinkButton>
+
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col py-3" style="margin-left: 16.666667%;">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+
+
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
