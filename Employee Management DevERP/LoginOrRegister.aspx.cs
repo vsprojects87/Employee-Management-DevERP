@@ -25,14 +25,16 @@ namespace Employee_Management_DevERP
             }
         }
 
-        protected void lbsignin_Click1(object sender, EventArgs e)
+      protected void lbsignin_Click(object sender, EventArgs e)
         {
+            clear();
             PanelSignIn.Visible = true;
             PanelSignUp.Visible = false;
         }
 
-        protected void lbsignup_Click1(object sender, EventArgs e)
+        protected void lbsignup_Click(object sender, EventArgs e)
         {
+            clear();
             PanelSignIn.Visible = false;
             PanelSignUp.Visible = true;
         }
@@ -41,14 +43,18 @@ namespace Employee_Management_DevERP
         {
             try
             {
-                string query = @"insert into [User](Username,Password,Name,Address,Mobile,Email) values(@Username,@Password,@Name,@Address,@Mobile,@Email)";
+                string query = @"insert into [Employee](EmpName,EmpMobile,EmpAddress,EmpEmail,EmpPinCode,EmpPassword,EmpQuestion,EmpAnswer,EmpJoinDate) values(@EmpName,@EmpMobile,@EmpAddress,@EmpEmail,@EmpPinCode,@EmpPassword,@EmpQuestion,@EmpAnswer,@EmpJoinDate)";
                 cmd = new SqlCommand(query, con);
-                cmd.Parameters.AddWithValue("@Username", txtUsernameReg.Text.Trim());
-                cmd.Parameters.AddWithValue("@Password", txtPassword2.Text.Trim());
-                cmd.Parameters.AddWithValue("@Name", txtName.Text.Trim());
-                cmd.Parameters.AddWithValue("@Address", txtAddress.Text.Trim());
-                cmd.Parameters.AddWithValue("@Mobile", txtMobile.Text.Trim());
-                cmd.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
+                cmd.Parameters.AddWithValue("@EmpName", txtName.Text.Trim());
+                cmd.Parameters.AddWithValue("@EmpMobile", txtMobile.Text.Trim());
+                cmd.Parameters.AddWithValue("@EmpAddress", txtAddress.Text.Trim());
+                cmd.Parameters.AddWithValue("@EmpEmail", txtEmail.Text.Trim());
+                cmd.Parameters.AddWithValue("@EmpPinCode", txtPinCode.Text.Trim());
+                cmd.Parameters.AddWithValue("@EmpPassword", txtPassword2.Text.Trim());
+                cmd.Parameters.AddWithValue("@EmpQuestion", ddlQuestion.SelectedItem.Text);
+                cmd.Parameters.AddWithValue("@EmpAnswer", txtAnswer.Text.Trim());
+                DateTime currentDate = DateTime.Today;
+                cmd.Parameters.AddWithValue("@EmpJoinDate", currentDate);
 
                 con.Open();
                 int r = cmd.ExecuteNonQuery();
@@ -58,6 +64,8 @@ namespace Employee_Management_DevERP
                     lblMessage.Text = "Register Successfully";
                     lblMessage.CssClass = "alert alert-success";
                     clear();
+                    PanelSignUp.Visible=false;
+                    PanelSignIn.Visible = true;
                 }
                 else
                 {
@@ -71,7 +79,7 @@ namespace Employee_Management_DevERP
                 if (ex.Message.Contains("Violation of UNIQUE KEY constraint"))
                 {
                     lblSignUpMessage.Visible = true;
-                    lblSignUpMessage.Text = "<b>" + txtUsername.Text.Trim() + " </b> username already exist";
+                    lblSignUpMessage.Text = "<b>" + txtEmpId.Text.Trim() + " </b>already exist";
                     lblSignUpMessage.CssClass = "alert alert-danger";
                 }
                 else
@@ -93,7 +101,9 @@ namespace Employee_Management_DevERP
 
         private void clear()
         {
-            txtUsernameReg.Text = string.Empty;
+            txtEmpId.Text = string.Empty;
+            txtPassword.Text = string.Empty;
+            txtEmpId.Text = string.Empty;
             txtPassword2.Text = string.Empty;
             txtName.Text = string.Empty;
             txtAddress.Text = string.Empty;
@@ -109,24 +119,25 @@ namespace Employee_Management_DevERP
 
                 username = ConfigurationManager.AppSettings["username"];
                 password = ConfigurationManager.AppSettings["password"];
-                if (username == txtUsername.Text.Trim() && password == txtPassword.Text.Trim())
+                if (username == txtEmpId.Text.Trim() && password == txtPassword.Text.Trim())
                 {
                     Session["admin"] = username;
-                    Response.Redirect("../Admin/Dashboard.aspx", false);
+                    Response.Redirect("~/Admin/Dashboard.aspx", false);
                 }
                 else
                 {
-                    string query = @"Select * from [Employee] where Username=@Username and Password=@Password";
+                    string query = @"Select * from [Employee] where EmpId=@EmpId and EmpPassword=@EmpPassword";
                     cmd = new SqlCommand(query, con);
-                    cmd.Parameters.AddWithValue("@Username", txtUsername.Text.Trim());
-                    cmd.Parameters.AddWithValue("@Password", txtPassword.Text.Trim());
+                    cmd.Parameters.AddWithValue("@EmpId", txtEmpId.Text.Trim());
+                    cmd.Parameters.AddWithValue("@EmpPassword", txtPassword.Text.Trim());
                     con.Open();
                     reader = cmd.ExecuteReader();
                     if (reader.Read())
                     {
-                        Session["user"] = reader["Username"].ToString();
-                        Session["userId"] = reader["UserId"].ToString();
-                        Response.Redirect("../Employee/Profile.aspx", false);
+                        Session["empName"] = reader["EmpName"].ToString();
+                        Session["empId"] = reader["EmpId"].ToString();
+                        Response.Redirect("~/Employee/Profile.aspx", false);
+                        clear();
                     }
                     else
                     {
@@ -143,7 +154,6 @@ namespace Employee_Management_DevERP
             {
                 con.Close();
             }
-
         }
 
         

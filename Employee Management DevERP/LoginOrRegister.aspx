@@ -29,8 +29,8 @@
 
                 <div class="row justify-content-center text-center mb-3">
                     <div class="col-md-6 col-lg-6 pb-2">
-                        <asp:LinkButton ID="lbsignin" CssClass="btn btn-outline-dark btn-primary" runat="server" OnClick="lbsignin_Click1">Sign In</asp:LinkButton>
-                        <asp:LinkButton ID="lbsignup" CssClass="btn btn-outline-dark btn-warning" runat="server" OnClick="lbsignup_Click1">Sign Up</asp:LinkButton>
+                        <asp:LinkButton ID="lbsignin" CssClass="btn btn-outline-dark btn-primary" runat="server" OnClick="lbsignin_Click">Sign In</asp:LinkButton>
+                        <asp:LinkButton ID="lbsignup" CssClass="btn btn-outline-dark btn-warning" runat="server" OnClick="lbsignup_Click">Sign Up</asp:LinkButton>
                     </div>
                 </div>
 
@@ -41,19 +41,19 @@
                         <div class="col-md-3 col-sm-6 col-lg-3 mx-auto">
 
                             <div class="form-group mb-sm-3">
-                                <label class="font-light" for="txtEmailOrMobile">Username</label>
-                                <asp:TextBox ID="txtUsername" CssClass="form-control" runat="server" required></asp:TextBox>
+                                <label class="font-light" for="txtEmpId">Employee Id</label>
+                                <asp:TextBox ID="txtEmpId" CssClass="form-control" runat="server" required></asp:TextBox>
                             </div>
                             <div class="form-group mb-sm-3">
                                 <label class="font-light" for="txtPassword">Password</label>
                                 <asp:TextBox ID="txtPassword" CssClass="form-control" runat="server" required></asp:TextBox>
                             </div>
 
-                            <asp:Button ID="btnLogIn" runat="server" CssClass="btn btn-info btn-primary-hover-outline" Text="Sign In" OnClick="btnLogIn_Click"/>
+                            <asp:Button ID="btnLogIn" runat="server" CssClass="btn btn-info btn-primary-hover-outline" Text="Sign In" OnClick="btnLogIn_Click" />
 
-                            <asp:LinkButton ID="lbForgotPass" runat="server" CssClass="m-4">Forgot Password</asp:LinkButton>
+                            <asp:LinkButton ID="lbForgotPass" runat="server" CssClass="m-4 mb-5">Forgot Password</asp:LinkButton>
 
-                            <asp:Label runat="server" CssClass="ml-5" Visible="false" Text="" ID="lblMessage"></asp:Label>
+                            <asp:Label runat="server" CssClass="ml-5 mt-4" Visible="false" Text="" ID="lblMessage"></asp:Label>
                         </div>
                     </asp:Panel>
                 </div>
@@ -65,11 +65,17 @@
                     <asp:Panel ID="PanelSignUp" runat="server">
                         <div class="col-md-3 col-lg-6 pb-0 mx-auto">
 
+                            <div class="form-group mb-sm-2">
+                                <label class="font-light" for="txtName">Full Name</label>
+                                <asp:TextBox ID="txtName" CssClass="form-control" runat="server" required></asp:TextBox>
+                            </div>
+
                             <div class="row">
                                 <div class="col-sm-6 mb-sm-2">
+
                                     <div class="form-group">
-                                        <label class="font-light" for="txtName">Username</label>
-                                        <asp:TextBox ID="txtUsernameReg" CssClass="form-control" runat="server" required></asp:TextBox>
+                                        <label class="font-light" for="txtMobile">Mobile</label>
+                                        <asp:TextBox ID="txtMobile" CssClass="form-control" runat="server" required></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-sm-6 mb-sm-2">
@@ -80,24 +86,17 @@
                                 </div>
                             </div>
 
-                            <div class="form-group mb-sm-2">
-                                <label class="font-light" for="txtName">Full Name</label>
-                                <asp:TextBox ID="txtName" CssClass="form-control" runat="server" required></asp:TextBox>
-                            </div>
 
 
-                            <div class="form-group mb-sm-2">
-                                <label class="font-light" for="txtAddress">Address</label>
-                                <asp:TextBox ID="txtAddress" CssClass="form-control" runat="server" TextMode="MultiLine" Rows="2" required></asp:TextBox>
-                            </div>
+
 
 
                             <div class="row">
-                                <div class="col-sm-6 mb-sm-2">
 
-                                    <div class="form-group">
-                                        <label class="font-light" for="txtMobile">Mobile</label>
-                                        <asp:TextBox ID="txtMobile" CssClass="form-control" runat="server" required></asp:TextBox>
+                                <div class="col-sm-6 mb-sm-2">
+                                    <div class="form-group mb-sm-2">
+                                        <label class="font-light" for="txtAddress">Address</label>
+                                        <asp:TextBox ID="txtAddress" CssClass="form-control" runat="server" TextMode="MultiLine" Rows="2" required></asp:TextBox>
                                     </div>
                                 </div>
 
@@ -127,16 +126,35 @@
 
                                 </div>
                             </div>
-                            <asp:Button ID="btnSignUp" runat="server" CssClass="btn btn-info btn-primary-hover-outline" Text="Sign Up" OnClick="btnSignUp_Click"/>
+
+                            <div class="row mb-3">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="font-light" for="ddlQuestion">Security Question</label>
+                                        <asp:DropDownList ID="ddlQuestion" runat="server" CssClass="form-control">
+                                            <asp:ListItem Value="">------ Choose Question ------</asp:ListItem>
+                                            <asp:ListItem Value="0">What was your school name?</asp:ListItem>
+                                            <asp:ListItem Value="1">What is your Favourite dish?</asp:ListItem>
+                                            <asp:ListItem Value="2">Who is your best friend?</asp:ListItem>
+                                        </asp:DropDownList>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="font-light" for="txtAnswer">Answer</label>
+                                        <asp:TextBox ID="txtAnswer" CssClass="form-control" runat="server" required></asp:TextBox>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <asp:Button ID="btnSignUp" runat="server" CssClass="btn btn-info btn-primary-hover-outline" Text="Sign Up" OnClick="btnSignUp_Click" />
                             <asp:Label ID="lblSignUpMessage" runat="server" Text="hii" CssClass="m-5" ForeColor="Red"></asp:Label>
 
                         </div>
                     </asp:Panel>
                 </div>
-
-
             </div>
-
         </div>
 
 
