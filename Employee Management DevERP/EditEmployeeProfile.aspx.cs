@@ -57,7 +57,6 @@ namespace Employee_Management_DevERP
                     {
                         txtName.Text = sdr["EmpName"].ToString();
                         txtPost.Text = sdr["EmpPost"].ToString();
-                        ddlDept.SelectedValue = sdr["EmpDept"].ToString();
                         txtSalary.Text = sdr["EmpSalary"].ToString();
                         txtMobile.Text = sdr["EmpMobile"].ToString();
                         txtEmail.Text = sdr["EmpEmail"].ToString();
@@ -90,7 +89,7 @@ namespace Employee_Management_DevERP
                 cmd.Parameters.AddWithValue("@EmpPassword", txtPassword.Text.Trim());
                 cmd.Parameters.AddWithValue("@EmpQuestion", ddlQuestion.SelectedItem.Text);
                 cmd.Parameters.AddWithValue("@EmpAnswer", txtAnswer.Text.Trim());
-                cmd.Parameters.AddWithValue("@EmpDept", ddlDept.SelectedValue);
+                cmd.Parameters.AddWithValue("@EmpDept", ddlDept.SelectedItem.Text);
                 cmd.Parameters.AddWithValue("@EmpPost", txtPost.Text.Trim());
                 cmd.Parameters.AddWithValue("@EmpSalary", txtSalary.Text.Trim());
                 DateTime currentDate = DateTime.Today;

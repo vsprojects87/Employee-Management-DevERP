@@ -48,8 +48,7 @@
                 <div class="col-md-6 pt-3">
                     <asp:Label for="ddlDept" runat="server" Style="font-weight: 600">Department</asp:Label>
                     <asp:DropDownList ID="ddlDept" runat="server" CssClass="form-control" required>
-                        <asp:ListItem Value="">--- Choose Department ---</asp:ListItem>
-                    </asp:DropDownList><asp:SqlDataSource runat="server" ID="SqlDataSource1"></asp:SqlDataSource>
+                    </asp:DropDownList>
                 </div>
                 <div class="col-md-6 pt-3">
                     <asp:Label for="txtPost" runat="server" Style="font-weight: 600">Post</asp:Label>
