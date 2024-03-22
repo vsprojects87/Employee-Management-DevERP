@@ -71,11 +71,11 @@
             <div class="row mr-lg-5 ml-lg-5 mb-3">
                 <div class="col-md-6 pt-3">
                     <asp:Label for="txtPassword" runat="server" Style="font-weight: 600">Password</asp:Label>
-                    <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" TextMode="Password" required></asp:TextBox>
+                    <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" TextMode="Password" ></asp:TextBox>
                 </div>
                 <div class="col-md-6 pt-3">
                     <asp:Label for="txtConfirmPass" runat="server" Style="font-weight: 600">Confirm Password</asp:Label>
-                    <asp:TextBox ID="txtConfirmPass" runat="server" CssClass="form-control" TextMode="Password" required></asp:TextBox>
+                    <asp:TextBox ID="txtConfirmPass" runat="server" CssClass="form-control" TextMode="Password" ></asp:TextBox>
                 </div>
             </div>
 
@@ -100,7 +100,10 @@
 
         <div class="row mr-lg-5 ml-lg-5 mb-3 pt-4 justify-content-center">
             <div class="col-md-3 col-md-offset-2 mb-3">
-                <asp:Button ID="btnAdd" runat="server" CssClass="btn btn-primary btn-block" Text="Update Employee" BackColor="#7200cf" Width="200px" OnClick="btnAdd_Click"/>
+                <asp:Button ID="btnAdd" runat="server" CssClass="btn btn-primary btn-block" Text="Update Employee" BackColor="#7200cf" Width="200px" OnClick="btnAdd_Click" />
+            </div>
+            <div class="col-md-3 col-md-offset-2 mb-3">
+                <asp:Button ID="btnBack" runat="server" CssClass="btn btn-primary btn-block" Text="Go Back" BackColor="#7200cf" Width="200px" OnClick="btnBack_Click" CausesValidation="false" ValidationGroup="a"/>
             </div>
         </div>
 

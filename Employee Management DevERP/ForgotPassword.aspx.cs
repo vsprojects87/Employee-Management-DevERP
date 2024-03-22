@@ -32,7 +32,7 @@ namespace Employee_Management_DevERP
             if (reader.Read())
             {
                 lblGetPass.Visible = true;
-                 lblGetPass.Text = reader["EmpPassword"].ToString();
+                 lblGetPass.Text = "Password : " + reader["EmpPassword"].ToString();
                 clear();
             }
             else

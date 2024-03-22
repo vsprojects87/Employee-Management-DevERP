@@ -12,8 +12,6 @@
 
             <asp:GridView ID="gvEmployee" runat="server" CssClass="table table-hover table-bordered" EmptyDataText="No Records to Display..!" AutoGenerateColumns="false" AllowPaging="true" PageSize="5" DataKeyNames="EmpId" OnRowDeleting="gvEmployee_RowDeleting" OnPageIndexChanging="gvEmployee_PageIndexChanging">
 
-<%--                OnPageIndexChanging="GridView1_PageIndexChanging" OnRowDeleting="GridView1_RowDeleting" OnRowCommand="GridView1_RowCommand" OnRowDataBound="GridView1_RowDataBound"--%>
-
                 <Columns>
 
                     <asp:BoundField DataField="EmpId" HeaderText="Id">
@@ -63,13 +61,6 @@
                         <ItemStyle HorizontalAlign="Center"></ItemStyle>
                     </asp:BoundField>
                    
-
-                    <asp:TemplateField HeaderText="Edit">
-                        <ItemTemplate>
-                            <asp:LinkButton ID="LinkButton1" runat="server" CommandName="EditEmployee" CommandArgument='<%#Eval("EmpId") %>'>Edit</asp:LinkButton>
-                        </ItemTemplate>
-                        <ItemStyle HorizontalAlign="Center" Width="50px" />
-                    </asp:TemplateField>
 
                     <asp:CommandField CausesValidation="false" HeaderText="Delete" ShowDeleteButton="true" DeleteText="Remove">
                         <ControlStyle Height="25px" Width="55px"></ControlStyle>

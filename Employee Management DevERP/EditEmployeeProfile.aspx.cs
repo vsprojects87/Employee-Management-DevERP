@@ -28,15 +28,27 @@ namespace Employee_Management_DevERP
             {
                 FillData();
             }
-            Response.Redirect("");
+            bindddldept();
+
+        }
+
+        private void bindddldept()
+        {
+            SqlDataAdapter adpdept = new SqlDataAdapter("select Distinct(Departments) from [Department]", con);
+            DataTable dt = new DataTable();
+            adpdept.Fill(dt);
+            ddlDept.DataSource = dt;
+            ddlDept.DataValueField = "Departments";
+            ddlDept.DataTextField = "Departments";
+            ddlDept.DataBind();
         }
 
         private void FillData()
         {
-            if (Request.QueryString["EmpId"] != null)
+            if (Session["EmpId"] != null)
             {
                 cmd = new SqlCommand("Select * from Employee where EmpId=@EmpId", con);
-                cmd.Parameters.AddWithValue("@EmpId", Request.QueryString["id"]);
+                cmd.Parameters.AddWithValue("@EmpId", Session["EmpId"]);
                 con.Open();
                 SqlDataReader sdr = cmd.ExecuteReader();
                 if (sdr.HasRows)
@@ -124,8 +136,8 @@ namespace Employee_Management_DevERP
                 if (r > 0)
                 {
                     clear();
-                    Response.Write("<script>alert('Updated Successfully')</script>");
                     Response.Redirect("~/Employee/Profile.aspx");
+                    Response.Write("<script>alert('Updated Successfully')</script>");
                 }
                 else
                 {
@@ -155,6 +167,11 @@ namespace Employee_Management_DevERP
             ddlDept.ClearSelection();
             ddlQuestion.ClearSelection();
             txtPinCode.Text = string.Empty;
+        }
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Employee/Profile.aspx");
         }
     }
 }
