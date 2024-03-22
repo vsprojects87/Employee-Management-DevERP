@@ -79,7 +79,8 @@ namespace Employee_Management_DevERP.Admin
                                 Directory.CreateDirectory(physicalPath);
                             }
                             selectedFile.SaveAs(physicalPath + selectedFile.FileName);
-                            cmd.Parameters.AddWithValue("@EmpPhoto", physicalPath);
+                            string imageName= selectedFile.FileName;
+                            cmd.Parameters.AddWithValue("@EmpPhoto", imageName);
                         }
                         else
                         {

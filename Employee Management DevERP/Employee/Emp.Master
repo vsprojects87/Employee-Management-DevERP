@@ -11,19 +11,29 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
+    <style>
+        footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+
     <form id="form1" runat="server">
 
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom border-gray">
             <div class="container-fluid d-flex justify-content-between">
                 <div class="mx-5">
-                    <a class="navbar-brand" href="#">Employee Name here</a>
+                    <a class="navbar-brand" href="#"><asp:Label ID="lblName" runat="server" CssClass="text-uppercase fw-bold" Text=""></asp:Label></a>
                 </div>
                 <div>
                     <ul class="navbar-nav m-2">
                         <li class="nav-item">
                             <asp:LinkButton ID="lbChangePass" CssClass="btn btn-outline-dark" runat="server">Change Password</asp:LinkButton>
-                            <asp:LinkButton ID="lbLogOut" runat="server" CssClass="btn btn-outline-dark mx-3">Log Out</asp:LinkButton>
+                            <asp:LinkButton ID="lbLogOut" runat="server" CssClass="btn btn-outline-dark mx-3" OnClick="lbLogOut_Click">Log Out</asp:LinkButton>
                         </li>
                     </ul>
                 </div>

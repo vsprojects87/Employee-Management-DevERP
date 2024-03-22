@@ -132,10 +132,10 @@
                                     <div class="form-group">
                                         <label class="font-light" for="ddlQuestion">Security Question</label>
                                         <asp:DropDownList ID="ddlQuestion" runat="server" CssClass="form-control">
-                                            <asp:ListItem Value="">------ Choose Question ------</asp:ListItem>
-                                            <asp:ListItem Value="0">What was your school name?</asp:ListItem>
-                                            <asp:ListItem Value="1">What is your Favourite dish?</asp:ListItem>
-                                            <asp:ListItem Value="2">Who is your best friend?</asp:ListItem>
+                                            <asp:ListItem Value="0">------ Choose Question ------</asp:ListItem>
+                                            <asp:ListItem>What was your school name?</asp:ListItem>
+                                            <asp:ListItem>What is your Favourite dish?</asp:ListItem>
+                                            <asp:ListItem>Who is your best friend?</asp:ListItem>
                                         </asp:DropDownList>
                                     </div>
                                 </div>

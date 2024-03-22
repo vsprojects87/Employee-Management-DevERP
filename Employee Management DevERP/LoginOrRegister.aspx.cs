@@ -134,8 +134,8 @@ namespace Employee_Management_DevERP
                     reader = cmd.ExecuteReader();
                     if (reader.Read())
                     {
-                        Session["empName"] = reader["EmpName"].ToString();
-                        Session["empId"] = reader["EmpId"].ToString();
+                        Session["EmpName"] = reader["EmpName"].ToString();
+                        Session["EmpId"] = reader["EmpId"].ToString();
                         Response.Redirect("~/Employee/Profile.aspx", false);
                         clear();
                     }

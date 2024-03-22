@@ -13,5 +13,11 @@ namespace Employee_Management_DevERP.Employee
         {
 
         }
+
+        protected void lbLogOut_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("~/LoginOrRegister.aspx");
+        }
     }
 }
