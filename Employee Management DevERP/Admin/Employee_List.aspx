@@ -16,7 +16,7 @@
 
                 <Columns>
 
-                    <asp:BoundField DataField="EmpId" HeaderText="Employee Id">
+                    <asp:BoundField DataField="EmpId" HeaderText="Id">
                         <ItemStyle HorizontalAlign="Center"></ItemStyle>
                     </asp:BoundField>
 

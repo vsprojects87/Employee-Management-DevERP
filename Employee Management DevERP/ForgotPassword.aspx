@@ -36,6 +36,7 @@
                     </div>
 
                     <asp:Button ID="btnChangePassword" runat="server" CssClass="btn btn-info btn-primary-hover-outline" Text="Get Password" OnClick="btnChangePassword_Click"/>
+                    <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Continue to Login</asp:LinkButton>
 
                     <asp:Label runat="server" CssClass="ml-5 mt-4 d-block" Visible="false" Text="" ID="lblGetPass"></asp:Label>
                 </div>

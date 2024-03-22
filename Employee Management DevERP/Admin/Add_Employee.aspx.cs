@@ -78,7 +78,9 @@ namespace Employee_Management_DevERP.Admin
                             {
                                 Directory.CreateDirectory(physicalPath);
                             }
-                            selectedFile.SaveAs(physicalPath + selectedFile.FileName);
+                            string savePath = Path.Combine(physicalPath, Path.GetFileName(selectedFile.FileName));
+
+                            selectedFile.SaveAs(savePath);
                             string imageName= selectedFile.FileName;
                             cmd.Parameters.AddWithValue("@EmpPhoto", imageName);
                         }
@@ -134,7 +136,9 @@ namespace Employee_Management_DevERP.Admin
             txtAddress.Text = string.Empty;
             txtPost.Text = string.Empty;
             txtSalary.Text = string.Empty;
-            ddlDept.SelectedIndex = 0;
+            ddlDept.ClearSelection();
+            ddlQuestion.ClearSelection();
+            txtPinCode.Text = string.Empty;
         }
     }
 }

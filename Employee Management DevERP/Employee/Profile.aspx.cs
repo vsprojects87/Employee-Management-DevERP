@@ -42,5 +42,10 @@ namespace Employee_Management_DevERP.Employee
             }
 
         }
+
+        protected void btnEditProfile_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/EditEmployeeProfile.aspx");
+        }
     }
 }

@@ -46,12 +46,12 @@
                             </div>
                             <div class="form-group mb-sm-3">
                                 <label class="font-light" for="txtPassword">Password</label>
-                                <asp:TextBox ID="txtPassword" CssClass="form-control" runat="server" required></asp:TextBox>
+                                <asp:TextBox ID="txtPassword" CssClass="form-control" runat="server" TextMode="Password" required></asp:TextBox>
                             </div>
 
                             <asp:Button ID="btnLogIn" runat="server" CssClass="btn btn-info btn-primary-hover-outline" Text="Sign In" OnClick="btnLogIn_Click" />
 
-                            <asp:LinkButton ID="lbForgotPass" runat="server" CssClass="m-4 mb-5">Forgot Password</asp:LinkButton>
+                            <asp:LinkButton ID="lbForgotPass" runat="server" CssClass="m-4 mb-5" OnClick="lbForgotPass_Click">Forgot Password</asp:LinkButton>
 
                             <asp:Label runat="server" CssClass="ml-5 mt-4" Visible="false" Text="" ID="lblMessage"></asp:Label>
                         </div>
@@ -88,9 +88,6 @@
 
 
 
-
-
-
                             <div class="row">
 
                                 <div class="col-sm-6 mb-sm-2">
@@ -114,14 +111,15 @@
 
                                     <div class="form-group">
                                         <label class="font-light" for="txtPassword2">Password</label>
-                                        <asp:TextBox ID="txtPassword2" CssClass="form-control" runat="server" required></asp:TextBox>
+                                        <asp:TextBox ID="txtPassword2" CssClass="form-control" runat="server" TextMode="Password" required></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
 
                                     <div class="form-group">
                                         <label class="font-light" for="txtConfirmPassword">Confirm Password</label>
-                                        <asp:TextBox ID="txtConformPassword" CssClass="form-control" runat="server" required></asp:TextBox>
+                                        <asp:TextBox ID="txtConformPassword" CssClass="form-control" runat="server" TextMode="Password" required></asp:TextBox>
+                                        <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Password Doesn't Match" ControlToCompare="txtPassword2" ControlToValidate="txtConformPassword" ForeColor="Red"></asp:CompareValidator>
                                     </div>
 
                                 </div>
@@ -149,7 +147,6 @@
                             </div>
 
                             <asp:Button ID="btnSignUp" runat="server" CssClass="btn btn-info btn-primary-hover-outline" Text="Sign Up" OnClick="btnSignUp_Click" />
-                            <asp:Label ID="lblSignUpMessage" runat="server" Text="hii" CssClass="m-5" ForeColor="Red"></asp:Label>
 
                         </div>
                     </asp:Panel>

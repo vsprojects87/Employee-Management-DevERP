@@ -15,7 +15,7 @@
                 <div class="col-md-6 pt-3">
                     <asp:Label for="ddlDept" runat="server" Style="font-weight: 600">Department</asp:Label>
                     <asp:DropDownList ID="ddlDept" runat="server" CssClass="form-control" required>
-                        <asp:ListItem Value="0">--- Choose Department ---</asp:ListItem>
+                        <asp:ListItem Value="" Selected="False">--- Choose Department ---</asp:ListItem>
                         <asp:ListItem>Admin</asp:ListItem>
                         <asp:ListItem>Production</asp:ListItem>
                         <asp:ListItem>Marketing</asp:ListItem>
@@ -25,6 +25,7 @@
                         <asp:ListItem>HR</asp:ListItem>
                         <asp:ListItem>Finance</asp:ListItem>
                     </asp:DropDownList>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Please Select the Department" ControlToValidate="ddlDept" ForeColor="Red"></asp:RequiredFieldValidator>
                 </div>
 
             </div>

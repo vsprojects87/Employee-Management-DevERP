@@ -31,6 +31,7 @@ namespace Employee_Management_DevERP
             reader = cmd.ExecuteReader();
             if (reader.Read())
             {
+                lblGetPass.Visible = true;
                  lblGetPass.Text = reader["EmpPassword"].ToString();
                 clear();
             }
@@ -45,6 +46,11 @@ namespace Employee_Management_DevERP
             txtAnswer.Text = string.Empty;
             txtEmpId.Text = string.Empty;
             ddlQuestion.SelectedIndex = 0;
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/LoginOrRegister.aspx");
         }
     }
 }

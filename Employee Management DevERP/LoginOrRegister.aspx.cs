@@ -60,27 +60,20 @@ namespace Employee_Management_DevERP
                 int r = cmd.ExecuteNonQuery();
                 if (r > 0)
                 {
-                    lblMessage.Visible = true;
-                    lblMessage.Text = "Register Successfully";
-                    lblMessage.CssClass = "alert alert-success";
                     clear();
                     PanelSignUp.Visible=false;
                     PanelSignIn.Visible = true;
                 }
                 else
                 {
-                    lblSignUpMessage.Visible = true;
-                    lblSignUpMessage.Text = "Cannot save record right now, please try after some time";
-                    lblSignUpMessage.CssClass = "alert alert-danger";
+                    Response.Write("<script>alert('Somthing Went Wrong, Try after some time');</script>");
                 }
             }
             catch (SqlException ex)
             {
                 if (ex.Message.Contains("Violation of UNIQUE KEY constraint"))
                 {
-                    lblSignUpMessage.Visible = true;
-                    lblSignUpMessage.Text = "<b>" + txtEmpId.Text.Trim() + " </b>already exist";
-                    lblSignUpMessage.CssClass = "alert alert-danger";
+                    Response.Write("<script>alert('Employee Already Exists');</script>");
                 }
                 else
                 {
@@ -110,6 +103,11 @@ namespace Employee_Management_DevERP
             txtEmail.Text = string.Empty;
             txtMobile.Text = string.Empty;
             txtConformPassword.Text = string.Empty;
+        }
+
+        protected void lbForgotPass_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/ForgotPassword.aspx");
         }
 
         protected void btnLogIn_Click(object sender, EventArgs e)
