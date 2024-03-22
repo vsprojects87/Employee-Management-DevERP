@@ -100,7 +100,7 @@
 
         <div class="row mr-lg-5 ml-lg-5 mb-3 pt-4 justify-content-center">
             <div class="col-md-3 col-md-offset-2 mb-3">
-                <asp:Button ID="btnAdd" runat="server" CssClass="btn btn-primary btn-block" Text="Add Employee" BackColor="#7200cf" Width="200px" />
+                <asp:Button ID="btnAdd" runat="server" CssClass="btn btn-primary btn-block" Text="Update Employee" BackColor="#7200cf" Width="200px" OnClick="btnAdd_Click"/>
             </div>
         </div>
 

@@ -71,7 +71,6 @@
     <Content Include="Admin\Dashboard.aspx" />
     <Content Include="Admin\Department_List.aspx" />
     <Content Include="Admin\Employee_List.aspx" />
-    <Content Include="ChangePassword.aspx" />
     <Content Include="EditEmployeeProfile.aspx" />
     <Content Include="Employee\Profile.aspx" />
     <Content Include="ForgotPassword.aspx" />
@@ -114,13 +113,6 @@
     </Compile>
     <Compile Include="Admin\Employee_List.aspx.designer.cs">
       <DependentUpon>Employee_List.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ChangePassword.aspx.cs">
-      <DependentUpon>ChangePassword.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ChangePassword.aspx.designer.cs">
-      <DependentUpon>ChangePassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="EditEmployeeProfile.aspx.cs">
       <DependentUpon>EditEmployeeProfile.aspx</DependentUpon>

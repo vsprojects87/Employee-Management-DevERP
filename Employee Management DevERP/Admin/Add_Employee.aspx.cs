@@ -45,12 +45,8 @@ namespace Employee_Management_DevERP.Admin
         {
             try
             {
-                string query = "insert into " +
-                    "Employee(EmpName,EmpMobile,EmpAddress,EmpSalary,EmpPost,EmpDept,EmpEmail," +
-                    "EmpPinCode,EmpPassword,EmpQuestion,EmpAnswer,EmpPhoto,EmpJoinDate) " +
-                    "values(@EmpName,@EmpMobile,@EmpAddress,@EmpSalary,@EmpPost,@EmpDept,@EmpEmail," +
-                    "@EmpPinCode,@EmpPassword,@EmpQuestion,@EmpAnswer,@EmpPhoto,@EmpJoinDate)";
-                cmd = new SqlCommand(query, con);
+                cmd = new SqlCommand("InsertEmployee", con);
+                cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@EmpName", txtName.Text.Trim());
                 cmd.Parameters.AddWithValue("@EmpMobile", txtMobile.Text.Trim());
                 cmd.Parameters.AddWithValue("@EmpAddress", txtAddress.Text.Trim());

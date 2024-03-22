@@ -43,7 +43,7 @@
         <div class="row mb-3 pt-sm-3">
             <div class="col-md-12">
 
-                <asp:GridView ID="gvDept" runat="server" CssClass="table table-hover table-bordered" EmptyDataText="No Records to Display..!" AutoGenerateColumns="false" AllowPaging="true" PageSize="5" DataKeyNames="DepartmentId" OnRowDeleting="gvDept_RowDeleting">
+                <asp:GridView ID="gvDept" runat="server" CssClass="table table-hover table-bordered" EmptyDataText="No Records to Display..!" AutoGenerateColumns="false" AllowPaging="true" PageSize="5" DataKeyNames="DepartmentId" OnRowDeleting="gvDept_RowDeleting" OnPageIndexChanging="gvDept_PageIndexChanging">
                     <Columns>
                         <asp:BoundField DataField="DepartmentId" HeaderText="Id">
                             <ItemStyle HorizontalAlign="Center"></ItemStyle>

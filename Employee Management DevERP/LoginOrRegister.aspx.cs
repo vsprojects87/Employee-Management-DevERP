@@ -43,8 +43,8 @@ namespace Employee_Management_DevERP
         {
             try
             {
-                string query = @"insert into [Employee](EmpName,EmpMobile,EmpAddress,EmpEmail,EmpPinCode,EmpPassword,EmpQuestion,EmpAnswer,EmpJoinDate) values(@EmpName,@EmpMobile,@EmpAddress,@EmpEmail,@EmpPinCode,@EmpPassword,@EmpQuestion,@EmpAnswer,@EmpJoinDate)";
-                cmd = new SqlCommand(query, con);
+                cmd = new SqlCommand("InsertEmployee", con);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@EmpName", txtName.Text.Trim());
                 cmd.Parameters.AddWithValue("@EmpMobile", txtMobile.Text.Trim());
                 cmd.Parameters.AddWithValue("@EmpAddress", txtAddress.Text.Trim());

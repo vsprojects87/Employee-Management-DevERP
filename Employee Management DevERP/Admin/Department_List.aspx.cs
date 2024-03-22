@@ -108,5 +108,11 @@ namespace Employee_Management_DevERP.Admin
             }
 
         }
+
+        protected void gvDept_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvDept.PageIndex = e.NewPageIndex;
+            showDept();
+        }
     }
 }

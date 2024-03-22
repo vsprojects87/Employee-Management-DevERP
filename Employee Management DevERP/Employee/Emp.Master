@@ -32,7 +32,6 @@
                 <div>
                     <ul class="navbar-nav m-2">
                         <li class="nav-item">
-                            <asp:LinkButton ID="lbChangePass" CssClass="btn btn-outline-dark" runat="server">Change Password</asp:LinkButton>
                             <asp:LinkButton ID="lbLogOut" runat="server" CssClass="btn btn-outline-dark mx-3" OnClick="lbLogOut_Click">Log Out</asp:LinkButton>
                         </li>
                     </ul>
