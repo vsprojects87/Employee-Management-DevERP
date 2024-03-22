@@ -23,6 +23,10 @@ namespace Employee_Management_DevERP.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["admin"] == null)
+            {
+                Response.Redirect("~/LoginOrRegister.aspx");
+            }
             bindddldept();
         }
 
@@ -42,9 +46,9 @@ namespace Employee_Management_DevERP.Admin
             try
             {
                 string query = "insert into " +
-                    "Employee(EmpId,EmpName,EmpMobile,EmpAddress,EmpSalary,EmpPost,EmpDept,EmpEmail," +
+                    "Employee(EmpName,EmpMobile,EmpAddress,EmpSalary,EmpPost,EmpDept,EmpEmail," +
                     "EmpPinCode,EmpPassword,EmpQuestion,EmpAnswer,EmpPhoto,EmpJoinDate) " +
-                    "values(@EmpId,@EmpName,@EmpMobile,@EmpAddress,@EmpSalary,@EmpPost,@EmpDept,@EmpEmail," +
+                    "values(@EmpName,@EmpMobile,@EmpAddress,@EmpSalary,@EmpPost,@EmpDept,@EmpEmail," +
                     "@EmpPinCode,@EmpPassword,@EmpQuestion,@EmpAnswer,@EmpPhoto,@EmpJoinDate)";
                 cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@EmpName", txtName.Text.Trim());

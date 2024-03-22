@@ -67,7 +67,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Admin\Add_Department.aspx" />
     <Content Include="Admin\Add_Employee.aspx" />
     <Content Include="Admin\Dashboard.aspx" />
     <Content Include="Admin\Department_List.aspx" />
@@ -80,13 +79,6 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin\Add_Department.aspx.cs">
-      <DependentUpon>Add_Department.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\Add_Department.aspx.designer.cs">
-      <DependentUpon>Add_Department.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Admin\Add_Employee.aspx.cs">
       <DependentUpon>Add_Employee.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

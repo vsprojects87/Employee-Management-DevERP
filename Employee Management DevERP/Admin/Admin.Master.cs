@@ -11,7 +11,16 @@ namespace Employee_Management_DevERP.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["admin"] == null)
+            {
+                Response.Redirect("~/LoginOrRegister.aspx");
+            }
+        }
 
+        protected void lbLogOut_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/LoginOrRegister.aspx");
+            Session.Abandon();
         }
     }
 }

@@ -40,22 +40,18 @@
                                 <a href="../Admin/Add_Employee.aspx" class="nav-link px-0"><i class="bi bi-file-plus fs-4"></i><span class="d-none d-sm-inline">Add Employee</span></a>
                             </li>
                             <li>
-                                <a href="../Admin/ProductList.aspx" class="nav-link px-0"><i class="bi bi-bag-heart fs-4"></i><span class="d-none d-sm-inline">Employee List</span></a>
+                                <a href="../Admin/Employee_List.aspx" class="nav-link px-0"><i class="bi bi-bag-heart fs-4"></i><span class="d-none d-sm-inline">Employee List</span></a>
                             </li>
                             <li>
-                                <a href="../Admin/Orders.aspx" class="nav-link px-0 align-middle">
+                                <a href="../Admin/Department_List.aspx" class="nav-link px-0 align-middle">
                                     <i class="fs-4 bi-table"></i><span class="ms-1 d-none d-sm-inline">Departments</span></a>
-                            </li>
-                            <li>
-                                <a href="../Admin/UserList.aspx" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
-                                    <i class="fs-4 bi-people"></i><span class="ms-1 d-none d-sm-inline">Salary Form</span></a>
                             </li>
                             
                         </ul>
                         <hr>
                         <div class="dropdown pb-4">
                             <a href="#" class="d-flex align-items-center text-white text-decoration-none">
-                                <asp:LinkButton ID="LinkButton1" Tesxt="<i class='bi bi-box-arrow-right fs-2'></i>" runat="server"><span class="d-none d-sm-inline mx-1">LogOut</span></asp:LinkButton>
+                                <asp:LinkButton ID="lbLogOut" Tesxt="<i class='bi bi-box-arrow-right fs-2'></i>" runat="server" OnClick="lbLogOut_Click"><span class="d-none d-sm-inline mx-1">LogOut</span></asp:LinkButton>
 
                             </a>
                         </div>
